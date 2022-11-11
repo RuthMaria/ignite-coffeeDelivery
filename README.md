@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=61dafb&labelColor=000000" alt="PRs welcome!" />
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=8047F8&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/badge/Made%20by-Ruth%20Maria-61dafb">
+  <img alt="License" src="https://img.shields.io/badge/Made%20by-Ruth%20Maria-8047F8">
 
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=61dafb&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=8047F8&labelColor=000000">
 </p>
 
 <br>
@@ -37,7 +37,7 @@ An application that manages a shopping cart of a fictitious coffee shop, which c
 
 ![video](./src/assets/video.gif)
 
-Access this layout in [Figma](<https://www.figma.com/file/TObYY3xA2br5GrNFthDgFt/ToDo-List-(Copy)?node-id=0%3A1>).
+Access this layout in [Figma](<https://www.figma.com/file/BfaIbr16yF5KsptfKCDJNx/Coffee-Delivery-(Copy)?node-id=2%3A1550>).
 
 <a id="technologies"></a><br>
 
