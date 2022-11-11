@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import shoppingCart from '../../assets/shoppingCart.svg';
+import shoppingCart from '../../assets/shoppingCart-yellow.svg';
 import mapPin from '../../assets/mapPin.svg';
 import { Container, City, Div } from './styles';
 
