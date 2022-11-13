@@ -1,10 +1,21 @@
 import styled from 'styled-components';
 
+export const Section = styled.section<{ background: string }>`
+  background-image: url(${(props) => props.background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7.875rem;
+  margin-top: 2.063rem;
+  max-width: 92rem;
+  padding: 94px 10rem 108px 10rem;
 `;
 
 export const Title = styled.p`
