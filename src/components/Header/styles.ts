@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
+  max-width: 92rem;
+  padding: 0 10rem;
 `;
 
 export const flex = styled.div`
