@@ -99,29 +99,18 @@ export const Quantity = styled.div`
   display: flex;
   gap: 8px;
 
-  > div {
-    background: ${(props) => props.theme['base-button']};
-    padding: 8px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
-
-    img,
-    svg {
-      cursor: pointer;
-    }
-
-    span {
-      color: ${(props) => props.theme['base-title']};
-      line-height: 1.3;
-    }
+  img,
+  svg {
+    cursor: pointer;
   }
 
   div + div {
     background: ${(props) => props.theme['purple-dark']};
     padding: 8px;
     border-radius: 6px;
+
+    :hover {
+      background: ${(props) => props.theme['purple']};
+    }
   }
 `;
