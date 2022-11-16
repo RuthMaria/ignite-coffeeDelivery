@@ -1,8 +1,8 @@
-import cup from '../../../assets/cup.svg';
-import cube from '../../../assets/cube.svg';
-import time from '../../../assets/time.svg';
-import image from '../../../assets/image.svg';
-import shoppingCart from '../../../assets/shoppingCart-white.svg';
+import cup from '../../../../assets/cup.svg';
+import cube from '../../../../assets/cube.svg';
+import time from '../../../../assets/time.svg';
+import image from '../../../../assets/image.svg';
+import shoppingCart from '../../../../assets/shoppingCart-white.svg';
 
 import {
   Div,
@@ -17,7 +17,7 @@ import {
   Information,
   ShoppingCart,
 } from './styles';
-import background from '../../../assets/background.svg';
+import background from '../../../../assets/background.svg';
 
 export const Banner: React.FC = () => {
   return (
