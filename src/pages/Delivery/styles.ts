@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 92rem;
   padding: 4.5rem 10rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 35%;
   gap: 32px;
 `;
 
@@ -153,12 +154,45 @@ export const Quantity = styled.div`
 `;
 
 export const Price = styled.div`
-  margin-left: 30px;
+  margin-left: 12px;
   font-weight: bold;
   line-height: 1.3;
   color: ${(props) => props.theme['base-text']};
 
   > span {
     margin-left: 0.2rem;
+  }
+`;
+
+export const Values = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -15px;
+
+  > span {
+    font-size: 0.875rem;
+  }
+`;
+
+export const Amount = styled.div`
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.3;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Button = styled.button`
+  background-color: ${(props) => props.theme['yellow']};
+  border-radius: 6px;
+  color: ${(props) => props.theme['white']};
+  font-size: 14px;
+  width: 100%;
+  padding: 12px 0;
+
+  transition: background-color 1s;
+
+  &:hover {
+    background-color: ${(props) => props.theme['yellow-dark']};
   }
 `;

@@ -22,6 +22,9 @@ import {
   Main,
   Img,
   Article,
+  Values,
+  Amount,
+  Button,
 } from './styles';
 import { Trash } from 'phosphor-react';
 
@@ -45,18 +48,18 @@ export const Delivery: React.FC = () => {
           </Header>
 
           <Address>
-            <Input type="text" width={12.5} placeholder="CEP" />
-            <Input type="text" width={35} placeholder="Rua" />
+            <Input type="text" width={15} placeholder="CEP" />
+            <Input type="text" width={40} placeholder="Rua" />
 
             <div>
-              <Input type="text" width={12.5} placeholder="Número" />
-              <Input type="text" width={21.75} placeholder="Complemento" />
+              <Input type="text" width={15} placeholder="Número" />
+              <Input type="text" width={24.3} placeholder="Complemento" />
             </div>
 
             <div>
-              <Input type="text" width={12.5} placeholder="Bairro" />
-              <Input type="text" width={17.25} placeholder="Cidade" />
-              <Input type="text" width={3.75} placeholder="UF" />
+              <Input type="text" width={15} placeholder="Bairro" />
+              <Input type="text" width={18.45} placeholder="Cidade" />
+              <Input type="text" width={4.95} placeholder="UF" />
             </div>
           </Address>
         </Div>
@@ -118,6 +121,7 @@ export const Delivery: React.FC = () => {
             </Main>
           </Article>
           <Line />
+
           <Article>
             <Img src={expresso} alt="" />
 
@@ -143,6 +147,23 @@ export const Delivery: React.FC = () => {
             </Main>
           </Article>
           <Line />
+
+          <Values>
+            <span>Total de itens</span>
+            <span>R$ 29,70</span>
+          </Values>
+
+          <Values>
+            <span>Entrega</span>
+            <span>R$ 3,50</span>
+          </Values>
+
+          <Amount>
+            <span>Total</span>
+            <span>R$ 33,20</span>
+          </Amount>
+
+          <Button>CONFIRMAR PEDIDO</Button>
         </Section>
       </div>
     </Container>
