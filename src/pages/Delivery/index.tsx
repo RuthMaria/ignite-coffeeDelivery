@@ -26,6 +26,7 @@ import {
   Amount,
   Button,
   Optional,
+  Complement,
 } from './styles';
 import { Trash } from 'phosphor-react';
 
@@ -52,11 +53,11 @@ export const Delivery: React.FC = () => {
             <Input type="text" width={15} placeholder="CEP" />
             <Input type="text" width={40} placeholder="Rua" />
 
-            <div>
+            <Complement>
               <Input type="text" width={15} placeholder="Número" />
               <Input type="text" width={24.3} placeholder="Complemento" />
               <Optional>Opcional</Optional>
-            </div>
+            </Complement>
 
             <div>
               <Input type="text" width={15} placeholder="Bairro" />

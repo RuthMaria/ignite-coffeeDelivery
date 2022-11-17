@@ -61,7 +61,6 @@ export const Input = styled.input<{ width: number }>`
   padding: 12px;
   margin-bottom: 16px;
   width: ${(props) => props.width}rem;
-  position: relative;
 
   ::placeholder {
     color: ${(props) => props.theme['base-label']};
@@ -73,13 +72,17 @@ export const Input = styled.input<{ width: number }>`
   }
 `;
 
+export const Complement = styled.div`
+  position: relative;
+`;
+
 export const Optional = styled.p`
   font-size: 0.75rem;
   font-style: italic;
   color: ${(props) => props.theme['base-label']};
   position: absolute;
-  right: 43.5rem;
-  bottom: 18.7rem;
+  right: 1rem;
+  bottom: 2rem;
 `;
 
 export const Payment = styled.div<{ selected?: boolean }>`
