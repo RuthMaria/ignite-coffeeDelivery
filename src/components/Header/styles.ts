@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const HeaderContent = styled.header`
+  background: ${(props) => props.theme['background']};
+  position: fixed;
+  width: 100%;
+  //  height: 6.5rem;
+`;
+
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 92rem;
-  padding: 0 10rem;
+  padding: 32px 10rem;
 `;
 
 export const flex = styled.div`
