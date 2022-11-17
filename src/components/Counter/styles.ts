@@ -1,16 +1,39 @@
 import styled from 'styled-components';
+import { ContainerProps } from '.';
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   background: ${(props) => props.theme['base-button']};
-  padding: 8px;
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 9px;
+  gap: 4px;
+  padding: ${(props) => props.hasPadding && '0.5rem 0.531rem'};
 
-  span {
+  button {
+    background: transparent;
+    transition: 0.4s;
+    color: ${(props) => props.theme['purple']};
+
+    &:disabled {
+      opacity: 0.4;
+    }
+
+    &:not(:disabled):hover {
+      color: ${(props) => props.theme['purple-dark']};
+    }
+  }
+
+  input {
+    text-align: center;
+    width: 30px;
+    background: none;
+    border: none;
+    margin-right: -1rem;
     color: ${(props) => props.theme['base-title']};
-    line-height: 1.3;
+
+    &:focus {
+      outline: none;
+    }
   }
 `;
