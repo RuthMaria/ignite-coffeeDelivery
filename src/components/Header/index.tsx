@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import shoppingCart from '../../assets/shoppingCart-yellow.svg';
-import mapPin from '../../assets/mapPin.svg';
 import { Container, City, Div, HeaderContent } from './styles';
+import { MapPin, ShoppingCart } from 'phosphor-react';
+import { defaultTheme } from '../../styles/themes/default';
 
 export const Header: React.FC = () => {
   return (
@@ -15,17 +15,17 @@ export const Header: React.FC = () => {
 
         <Div>
           <City>
-            <img src={mapPin} alt="Sinalização de localização" />
+            <MapPin size={22} weight="fill" color={defaultTheme['purple']} />
             <span>Maceió, AL</span>
           </City>
 
           <Link to="/">
             <div>
-              <img
-                src={shoppingCart}
-                alt="Carrinho de compras de supermercado"
+              <ShoppingCart
+                size={22}
+                weight="fill"
+                color={defaultTheme['yellow-dark']}
               />
-
               <div>
                 <p>3</p>
               </div>

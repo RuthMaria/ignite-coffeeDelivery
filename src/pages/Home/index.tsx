@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus } from 'phosphor-react';
+import { ShoppingCartSimple } from 'phosphor-react';
 import { Banner } from './components/Banner';
 import {
   Title,
@@ -15,8 +15,6 @@ import {
   Content,
 } from './styles';
 import expresso from '../../assets/expresso.svg';
-import shoppingCartSimple from '../../assets/shoppingCartSimple.svg';
-import less from '../../assets/less.svg';
 import { defaultTheme } from '../../styles/themes/default';
 import { Counter } from '../../components/Counter';
 
@@ -50,10 +48,14 @@ export const Home: React.FC = () => {
               </Price>
 
               <Quantity>
-                <Counter />
+                <Counter hasPadding />
 
                 <div>
-                  <img src={shoppingCartSimple} alt="" />
+                  <ShoppingCartSimple
+                    size={22}
+                    weight="fill"
+                    color={defaultTheme['white']}
+                  />
                 </div>
               </Quantity>
             </Group>

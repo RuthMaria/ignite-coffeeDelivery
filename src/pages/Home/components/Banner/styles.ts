@@ -64,18 +64,18 @@ export const Flex = styled.div`
   border-radius: 50%;
 `;
 
-export const ShoppingCart = styled(Flex)`
+export const DivShoppingCart = styled(Flex)`
   background: ${(props) => props.theme['yellow-dark']};
 `;
 
-export const Cube = styled(Flex)`
+export const DivPackage = styled(Flex)`
   background: ${(props) => props.theme['base-text']};
 `;
 
-export const Time = styled(Flex)`
+export const DivTimer = styled(Flex)`
   background: ${(props) => props.theme['yellow']};
 `;
 
-export const Cup = styled(Flex)`
+export const DivCoffee = styled(Flex)`
   background: ${(props) => props.theme['purple']};
 `;

@@ -1,23 +1,22 @@
-import cup from '../../../../assets/cup.svg';
-import cube from '../../../../assets/cube.svg';
-import time from '../../../../assets/time.svg';
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
+import { defaultTheme } from '../../../../styles/themes/default';
+
 import image from '../../../../assets/image.svg';
-import shoppingCart from '../../../../assets/shoppingCart-white.svg';
+import background from '../../../../assets/background.svg';
 
 import {
   Div,
-  Cup,
-  Cube,
-  Time,
   Group,
   Title,
   Section,
+  DivTimer,
   Subtitle,
+  DivCoffee,
   Container,
+  DivPackage,
   Information,
-  ShoppingCart,
+  DivShoppingCart,
 } from './styles';
-import background from '../../../../assets/background.svg';
 
 export const Banner: React.FC = () => {
   return (
@@ -33,35 +32,48 @@ export const Banner: React.FC = () => {
           <Information>
             <Div>
               <Group>
-                <ShoppingCart>
-                  <img
-                    src={shoppingCart}
-                    alt="Carrinho de compras de supermercado"
+                <DivShoppingCart>
+                  <ShoppingCart
+                    size={16}
+                    weight="fill"
+                    color={defaultTheme['white']}
                   />
-                </ShoppingCart>
+                </DivShoppingCart>
                 Compras simples e segura
               </Group>
 
               <Group>
-                <Cube>
-                  <img src={cube} alt="Cubo" />
-                </Cube>
+                <DivPackage>
+                  <Package
+                    size={16}
+                    weight="fill"
+                    color={defaultTheme['white']}
+                  />
+                </DivPackage>
                 Embalagem mantém o café intacto
               </Group>
             </Div>
 
             <Div>
               <Group>
-                <Time>
-                  <img src={time} alt="Relógio" />
-                </Time>
+                <DivTimer>
+                  <Timer
+                    size={16}
+                    weight="fill"
+                    color={defaultTheme['white']}
+                  />
+                </DivTimer>
                 Entrega rápida e rastreada
               </Group>
 
               <Group>
-                <Cup>
-                  <img src={cup} alt="Xícara de café" />
-                </Cup>
+                <DivCoffee>
+                  <Coffee
+                    size={16}
+                    weight="fill"
+                    color={defaultTheme['white']}
+                  />
+                </DivCoffee>
                 O café chega fresquinho até você
               </Group>
             </Div>
