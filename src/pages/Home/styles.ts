@@ -41,7 +41,7 @@ export const Image = styled.div`
 
   div {
     position: absolute;
-    top: 48.5rem;
+    top: 44rem;
     margin-left: -4rem;
   }
 `;

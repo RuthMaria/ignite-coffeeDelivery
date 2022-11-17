@@ -25,6 +25,7 @@ import {
   Values,
   Amount,
   Button,
+  Optional,
 } from './styles';
 import { Trash } from 'phosphor-react';
 
@@ -54,6 +55,7 @@ export const Delivery: React.FC = () => {
             <div>
               <Input type="text" width={15} placeholder="Número" />
               <Input type="text" width={24.3} placeholder="Complemento" />
+              <Optional>Opcional</Optional>
             </div>
 
             <div>
@@ -142,7 +144,7 @@ export const Delivery: React.FC = () => {
 
               <Price>
                 <span>R$</span>
-                <span>9,90</span>
+                <span>99,90</span>
               </Price>
             </Main>
           </Article>
@@ -150,7 +152,7 @@ export const Delivery: React.FC = () => {
 
           <Values>
             <span>Total de itens</span>
-            <span>R$ 29,70</span>
+            <span>R$ 299,70</span>
           </Values>
 
           <Values>
