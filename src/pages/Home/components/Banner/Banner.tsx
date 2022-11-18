@@ -1,5 +1,6 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
 import image from '../../../../assets/image.svg';
+import { IconCircle } from '../../../../components';
 
 import { defaultTheme } from '../../../../styles/themes/default';
 import {
@@ -7,13 +8,9 @@ import {
   Group,
   Title,
   Section,
-  DivTimer,
   Subtitle,
-  DivCoffee,
   Container,
-  DivPackage,
   Information,
-  DivShoppingCart,
 } from './Banner.style';
 
 export const Banner: React.FC = () => {
@@ -30,48 +27,48 @@ export const Banner: React.FC = () => {
           <Information>
             <Div>
               <Group>
-                <DivShoppingCart>
+                <IconCircle color="yellowDark">
                   <ShoppingCart
                     size={16}
                     weight="fill"
                     color={defaultTheme['white']}
                   />
-                </DivShoppingCart>
+                </IconCircle>
                 Compras simples e segura
               </Group>
 
               <Group>
-                <DivPackage>
+                <IconCircle color="gray">
                   <Package
                     size={16}
                     weight="fill"
                     color={defaultTheme['white']}
                   />
-                </DivPackage>
+                </IconCircle>
                 Embalagem mantém o café intacto
               </Group>
             </Div>
 
             <Div>
               <Group>
-                <DivTimer>
+                <IconCircle color="yellow">
                   <Timer
                     size={16}
                     weight="fill"
                     color={defaultTheme['white']}
                   />
-                </DivTimer>
+                </IconCircle>
                 Entrega rápida e rastreada
               </Group>
 
               <Group>
-                <DivCoffee>
+                <IconCircle color="purple">
                   <Coffee
                     size={16}
                     weight="fill"
                     color={defaultTheme['white']}
                   />
-                </DivCoffee>
+                </IconCircle>
                 O café chega fresquinho até você
               </Group>
             </Div>

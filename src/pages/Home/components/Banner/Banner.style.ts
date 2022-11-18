@@ -54,28 +54,3 @@ export const Information = styled.div`
   flex-direction: column;
   gap: 1.25rem;
 `;
-
-export const Flex = styled.div`
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-`;
-
-export const DivShoppingCart = styled(Flex)`
-  background: ${(props) => props.theme['yellow-dark']};
-`;
-
-export const DivPackage = styled(Flex)`
-  background: ${(props) => props.theme['base-text']};
-`;
-
-export const DivTimer = styled(Flex)`
-  background: ${(props) => props.theme['yellow']};
-`;
-
-export const DivCoffee = styled(Flex)`
-  background: ${(props) => props.theme['purple']};
-`;
