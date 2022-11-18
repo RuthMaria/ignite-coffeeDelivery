@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import background from '../../../../assets/background.svg';
 
-export const Section = styled.section<{ background: string }>`
-  background-image: url(${(props) => props.background});
+export const Section = styled.section`
+  background: url(${background}) no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   margin: 0;
   padding: 0;

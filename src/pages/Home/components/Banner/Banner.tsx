@@ -1,9 +1,7 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
-import { defaultTheme } from '../../../../styles/themes/default';
-
 import image from '../../../../assets/image.svg';
-import background from '../../../../assets/background.svg';
 
+import { defaultTheme } from '../../../../styles/themes/default';
 import {
   Div,
   Group,
@@ -20,7 +18,7 @@ import {
 
 export const Banner: React.FC = () => {
   return (
-    <Section background={background}>
+    <Section>
       <Container>
         <div>
           <Title>Encontre o café perfeito para qualquer hora do dia</Title>

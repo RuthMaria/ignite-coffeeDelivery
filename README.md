@@ -47,6 +47,7 @@ Access this layout in [Figma](<https://www.figma.com/file/BfaIbr16yF5KsptfKCDJNx
 - TypeScript
 - HTML5
 - CSS3
+- Phosphor Icons
 
 <a id="run"></a><br>
 

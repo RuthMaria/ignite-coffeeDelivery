@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ContainerProps } from '.';
+import { ContainerProps } from './Counter';
 
 export const Container = styled.div<ContainerProps>`
   background: ${(props) => props.theme['base-button']};
@@ -27,8 +27,7 @@ export const Container = styled.div<ContainerProps>`
   input {
     text-align: center;
     width: 30px;
-    background: none;
-    border: none;
+    background: transparent;
     margin-right: -1rem;
     color: ${(props) => props.theme['base-title']};
 
