@@ -2,7 +2,7 @@ import React from 'react';
 import { Minus, Plus } from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/default';
 
-import { Container } from './styles';
+import { Container } from './Counter.style';
 
 export interface ContainerProps {
   hasPadding?: boolean;

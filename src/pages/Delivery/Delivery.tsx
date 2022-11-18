@@ -27,12 +27,12 @@ import {
   Button,
   Optional,
   Complement,
-} from './styles';
+} from './Delivery.style';
 import { Trash } from 'phosphor-react';
 
 import { defaultTheme } from '../../styles/themes/default';
 import expresso from '../../assets/expresso.svg';
-import { Counter } from '../../components/Counter';
+import { Counter } from '../../components';
 
 export const Delivery: React.FC = () => {
   return (

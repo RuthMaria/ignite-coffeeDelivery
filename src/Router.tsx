@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DefaultLayout } from './layouts/DefaultLayout';
-import { Delivery } from './pages/Delivery';
-import { Home } from './pages/Home';
+import { DefaultLayout } from './layouts/DefaultLayout/DefaultLayout';
+import { Delivery, Home } from './pages';
 
 /* Todas as rotas que começam com '\' terão o defaultLayout aplicado */
 

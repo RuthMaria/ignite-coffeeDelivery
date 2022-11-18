@@ -16,7 +16,7 @@ import {
   DivPackage,
   Information,
   DivShoppingCart,
-} from './styles';
+} from './Banner.style';
 
 export const Banner: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShoppingCartSimple } from 'phosphor-react';
-import { Banner } from './components/Banner';
+import { Banner } from './components/Banner/Banner';
 import {
   Title,
   Card,
@@ -13,10 +13,10 @@ import {
   Image,
   Quantity,
   Content,
-} from './styles';
+} from './Home.style';
 import expresso from '../../assets/expresso.svg';
 import { defaultTheme } from '../../styles/themes/default';
-import { Counter } from '../../components/Counter';
+import { Counter } from '../../components';
 
 export const Home: React.FC = () => {
   return (
