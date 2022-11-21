@@ -31,7 +31,7 @@ import {
 import { Trash } from 'phosphor-react';
 
 import { defaultTheme } from '../../styles/themes/default';
-import expresso from '../../assets/expresso.svg';
+import expresso from '/assets/expresso.svg';
 import { Counter } from '../../components';
 
 export const Delivery: React.FC = () => {

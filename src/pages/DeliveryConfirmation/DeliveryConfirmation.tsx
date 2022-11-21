@@ -2,7 +2,7 @@ import React from 'react';
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
 import { IconCircle } from '../../components';
 import { defaultTheme } from '../../styles/themes/default';
-import illustration from '../../assets/illustration.svg';
+import illustration from '/assets/illustration.svg';
 
 import {
   Card,

@@ -1,5 +1,5 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
-import image from '../../../../assets/image.svg';
+import image from '/assets/image.svg';
 import { IconCircle } from '../../../../components';
 
 import { defaultTheme } from '../../../../styles/themes/default';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../../../../assets/background.svg';
+import background from '/assets/background.svg';
 
 export const Section = styled.section`
   background: url(${background}) no-repeat center;
