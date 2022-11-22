@@ -31,7 +31,9 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
   };
 
   const formatPrice = (price: number) => {
-    return price.toString().replace('.', ',');
+    return price.toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+    });
   };
 
   return (
