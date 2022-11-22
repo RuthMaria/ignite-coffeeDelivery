@@ -61,4 +61,3 @@ export const Prediction = styled.div`
     }
   }
 `;
-// export const  = styled.``;
