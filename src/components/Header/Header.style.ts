@@ -10,7 +10,7 @@ export const HeaderContent = styled.header`
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 92rem;
+  min-width: 92rem;
   padding: 32px 10rem;
 `;
 
@@ -36,7 +36,7 @@ export const Div = styled(flex)`
       div {
         position: absolute;
         top: 23px;
-        right: 200px;
+        right: 150px;
 
         p {
           background: ${(props) => props.theme['yellow-dark']};
@@ -48,6 +48,7 @@ export const Div = styled(flex)`
           justify-content: center;
           align-items: center;
           font-size: 0.75rem;
+          //margin-top: -2rem;
         }
       }
     }

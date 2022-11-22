@@ -14,7 +14,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2.063rem;
-  max-width: 92rem;
+  min-width: 92rem;
   padding: 94px 10rem 108px 10rem;
 `;
 
