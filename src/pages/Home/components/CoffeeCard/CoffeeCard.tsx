@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { Counter } from '../../../../components';
 import { Coffee } from '../../../../context/coffee';
@@ -20,6 +20,16 @@ interface CoffeeCardProps {
 }
 
 export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
+  const [amount, setAmount] = useState(1);
+
+  const addAmount = () => {
+    setAmount(amount + 1);
+  };
+
+  const decreaseAmount = () => {
+    setAmount(amount - 1);
+  };
+
   const formatPrice = (price: number) => {
     return price.toString().replace('.', ',');
   };
@@ -48,7 +58,12 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
         </Price>
 
         <Quantity>
-          <Counter hasPadding />
+          <Counter
+            decreaseAmount={decreaseAmount}
+            addAmount={addAmount}
+            amount={amount}
+            hasPadding
+          />
 
           <div>
             <ShoppingCartSimple

@@ -13,6 +13,7 @@ export const Container = styled.div<ContainerProps>`
   button {
     background: transparent;
     transition: 0.4s;
+    cursor: pointer;
     color: ${(props) => props.theme['purple']};
 
     &:disabled {

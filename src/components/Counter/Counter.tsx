@@ -8,14 +8,25 @@ export interface ContainerProps {
   hasPadding?: boolean;
 }
 
-export const Counter: React.FC<ContainerProps> = ({ hasPadding }) => {
+interface CounterProps extends ContainerProps {
+  addAmount: () => any;
+  decreaseAmount: () => any;
+  amount: number;
+}
+
+export const Counter: React.FC<CounterProps> = ({
+  amount,
+  addAmount,
+  hasPadding,
+  decreaseAmount,
+}) => {
   return (
     <Container hasPadding={hasPadding}>
-      <button>
+      <button disabled={amount === 1} onClick={decreaseAmount}>
         <Minus size={14} weight="fill" />
       </button>
-      <input type="number" readOnly value={1} />
-      <button>
+      <input type="number" readOnly value={amount} />
+      <button onClick={addAmount}>
         <Plus size={14} weight="fill" />
       </button>
     </Container>

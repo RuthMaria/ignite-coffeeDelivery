@@ -18,5 +18,5 @@ export const Title = styled.p`
 export const Section = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
 `;

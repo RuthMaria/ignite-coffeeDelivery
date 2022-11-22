@@ -123,7 +123,7 @@ export const coffees: Array<Coffee> = [
     tags: ['especial', 'alcoólico'],
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-    photo: 'havaiano.svg',
+    photo: 'irlandes.svg',
     price: 9.9,
   },
 ];
