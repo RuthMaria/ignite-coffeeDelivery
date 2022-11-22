@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
             <span>Maceió, AL</span>
           </City>
 
-          <Link to="/">
+          <Link to="/delivery">
             <div>
               <ShoppingCart
                 size={22}
