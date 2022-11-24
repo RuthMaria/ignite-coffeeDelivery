@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/assets/logo.svg';
 import { Container, City, Div, HeaderContent } from './Header.style';
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/default';
+import { ShoppingCartContext } from '../../context/shoppingCart';
 
 export const Header: React.FC = () => {
+  const { isEmptyShoppingCart, numberItemsShoppingCart } =
+    useContext(ShoppingCartContext);
+
   return (
     <HeaderContent>
       <Container>
@@ -26,9 +30,11 @@ export const Header: React.FC = () => {
                 weight="fill"
                 color={defaultTheme['yellow-dark']}
               />
-              <div>
-                <p>3</p>
-              </div>
+              {!isEmptyShoppingCart && (
+                <div>
+                  <p>{numberItemsShoppingCart}</p>
+                </div>
+              )}
             </div>
           </Link>
         </Div>
