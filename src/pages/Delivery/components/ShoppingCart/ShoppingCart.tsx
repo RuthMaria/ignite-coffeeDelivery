@@ -1,8 +1,7 @@
 import { Trash } from 'phosphor-react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Counter } from '../../../../components';
 import { defaultTheme } from '../../../../styles/themes/default';
-import expresso from '/assets/expresso.svg';
 
 import {
   Amount,
@@ -17,35 +16,50 @@ import {
   Span,
   Values,
 } from './ShoppingCart.style';
+import { Coffee, ShoppingCartContext } from '../../../../context/shoppingCart';
+import { formatPrice } from '../../../../utils/formatPrice';
 
 export const ShoppingCart: React.FC = () => {
+  const { shoppingCart, removeCoffee, addAmount } =
+    useContext(ShoppingCartContext);
+
+  const handleRemoveCoffee = (coffee: Coffee) => {
+    removeCoffee(coffee.id);
+  };
+
   return (
     <Container>
-      <Article>
-        <Img src={expresso} alt="" />
+      {shoppingCart.map((coffee) => {
+        return (
+          <div key={coffee.id}>
+            <Article>
+              <Img src={`/assets/${coffee.photo}`} alt="" />
 
-        <Main>
-          <div>
-            <Span>Expresso tradicional</Span>
-            <div>
-              <Quantity>
-                <Counter />
+              <Main>
+                <div>
+                  <Span>{coffee.name}</Span>
+                  <div>
+                    <Quantity>
+                      <Counter amount={coffee.amount} addAmount={() => {}} />
 
-                <button>
-                  <Trash size={16} color={defaultTheme['purple']} />
-                  <span>REMOVER</span>
-                </button>
-              </Quantity>
-            </div>
+                      <button onClick={() => handleRemoveCoffee(coffee)}>
+                        <Trash size={16} color={defaultTheme['purple']} />
+                        <span>REMOVER</span>
+                      </button>
+                    </Quantity>
+                  </div>
+                </div>
+
+                <Price>
+                  <span>R$</span>
+                  <span>{formatPrice(coffee.totalPrice)}</span>
+                </Price>
+              </Main>
+            </Article>
+            <Line />
           </div>
-
-          <Price>
-            <span>R$</span>
-            <span>9,90</span>
-          </Price>
-        </Main>
-      </Article>
-      <Line />
+        );
+      })}
 
       <Values>
         <span>Total de itens</span>

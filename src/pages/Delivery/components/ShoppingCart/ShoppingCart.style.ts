@@ -12,6 +12,7 @@ export const Main = styled.main`
 export const Article = styled.article`
   display: flex;
   gap: 20px;
+  margin-bottom: 33.5px;
 `;
 
 export const Container = styled.section`
