@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { ShoppingCartContextProvider } from './context/shoppingCart';
 import { Router } from './Router';
 
 import { GlobalStyle } from './styles/global';
@@ -9,7 +10,9 @@ export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <ShoppingCartContextProvider>
+          <Router />
+        </ShoppingCartContextProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

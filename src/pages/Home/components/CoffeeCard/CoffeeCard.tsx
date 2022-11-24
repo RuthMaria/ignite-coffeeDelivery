@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { Counter } from '../../../../components';
 import { Coffee } from '../../../../context/coffee';
@@ -13,7 +14,10 @@ import {
   Quantity,
   CoffeName,
   Description,
+  Button,
 } from './CoffeeCard.style';
+import { ShoppingCartContext } from '../../../../context/shoppingCart';
+import { formatPrice } from '../../../../utils/formatPrice';
 
 interface CoffeeCardProps {
   coffee: Coffee;
@@ -21,8 +25,9 @@ interface CoffeeCardProps {
 
 export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
   const [amount, setAmount] = useState(1);
+  const { addCoffee } = useContext(ShoppingCartContext);
 
-  const addAmount = () => {
+  const addAmount = (id: string, amount: number) => {
     setAmount(amount + 1);
   };
 
@@ -30,10 +35,19 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
     setAmount(amount - 1);
   };
 
-  const formatPrice = (price: number) => {
-    return price.toLocaleString('pt-BR', {
-      minimumFractionDigits: 2,
-    });
+  const handleAddCoffee = () => {
+    const { photo, name, price } = coffee;
+
+    const newCoffee = {
+      id: uuidv4(),
+      photo,
+      name,
+      price,
+      amount,
+      totalPrice: amount * price,
+    };
+
+    addCoffee(newCoffee);
   };
 
   return (
@@ -61,19 +75,21 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
 
         <Quantity>
           <Counter
+            id={coffee.id}
             decreaseAmount={decreaseAmount}
             addAmount={addAmount}
             amount={amount}
             hasPadding
+            flag="home"
           />
 
-          <div>
+          <Button onClick={handleAddCoffee}>
             <ShoppingCartSimple
               size={22}
               weight="fill"
               color={defaultTheme['white']}
             />
-          </div>
+          </Button>
         </Quantity>
       </Group>
     </Card>

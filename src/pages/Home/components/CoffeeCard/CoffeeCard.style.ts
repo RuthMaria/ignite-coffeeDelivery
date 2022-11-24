@@ -83,14 +83,14 @@ export const Quantity = styled.div`
   svg {
     cursor: pointer;
   }
+`;
 
-  div + div {
-    background: ${(props) => props.theme['purple-dark']};
-    padding: 8px;
-    border-radius: 6px;
+export const Button = styled.button`
+  background: ${(props) => props.theme['purple-dark']};
+  padding: 8px;
+  border-radius: 6px;
 
-    :hover {
-      background: ${(props) => props.theme['purple']};
-    }
+  &:hover {
+    background: ${(props) => props.theme['purple']};
   }
 `;
