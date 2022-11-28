@@ -16,15 +16,16 @@ import {
   Span,
   Values,
 } from './ShoppingCart.style';
-import { Coffee, ShoppingCartContext } from '../../../../context/shoppingCart';
+import { ShoppingCartContext } from '../../../../context/shoppingCart';
 import { formatPrice } from '../../../../utils/formatPrice';
+import { Coffee } from '../../../../reducers/shoppingCart/reducer';
 
 export const ShoppingCart: React.FC = () => {
-  const { shoppingCart, removeCoffee, addAmount } =
+  const { shoppingCart, removeCoffeeShoppingCart } =
     useContext(ShoppingCartContext);
 
   const handleRemoveCoffee = (coffee: Coffee) => {
-    removeCoffee(coffee.id);
+    removeCoffeeShoppingCart(coffee.id);
   };
 
   return (
@@ -40,7 +41,11 @@ export const ShoppingCart: React.FC = () => {
                   <Span>{coffee.name}</Span>
                   <div>
                     <Quantity>
-                      <Counter amount={coffee.amount} addAmount={() => {}} />
+                      <Counter
+                        amount={coffee.amount}
+                        addAmount={() => {}}
+                        decreaseAmount={() => {}}
+                      />
 
                       <button onClick={() => handleRemoveCoffee(coffee)}>
                         <Trash size={16} color={defaultTheme['purple']} />

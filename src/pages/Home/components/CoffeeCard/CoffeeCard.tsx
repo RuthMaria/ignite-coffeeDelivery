@@ -25,7 +25,7 @@ interface CoffeeCardProps {
 
 export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
   const [amount, setAmount] = useState(1);
-  const { addCoffee } = useContext(ShoppingCartContext);
+  const { addCoffeeShoppingCart } = useContext(ShoppingCartContext);
 
   const addAmount = () => {
     setAmount(amount + 1);
@@ -35,7 +35,7 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
     setAmount(amount - 1);
   };
 
-  const handleAddCoffee = () => {
+  const handleAddCoffeeShoppingCart = () => {
     const { photo, name, price } = coffee;
 
     const newCoffee = {
@@ -47,7 +47,7 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
       totalPrice: amount * price,
     };
 
-    addCoffee(newCoffee);
+    addCoffeeShoppingCart(newCoffee);
   };
 
   return (
@@ -81,7 +81,7 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
             hasPadding
           />
 
-          <Button onClick={handleAddCoffee}>
+          <Button onClick={handleAddCoffeeShoppingCart}>
             <ShoppingCartSimple
               size={22}
               weight="fill"
