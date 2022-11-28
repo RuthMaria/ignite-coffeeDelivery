@@ -1,6 +1,6 @@
 import { Coffee } from 'phosphor-react';
 import React from 'react';
-import { coffees } from '../../context/coffee';
+import { coffees } from '../../data/coffee';
 import { Banner } from './components/Banner/Banner';
 import { CoffeeCard } from './components/CoffeeCard/CoffeeCard';
 

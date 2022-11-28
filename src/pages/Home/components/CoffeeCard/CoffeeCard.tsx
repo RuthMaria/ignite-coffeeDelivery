@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ShoppingCartSimple } from 'phosphor-react';
 import { Counter } from '../../../../components';
-import { Coffee } from '../../../../context/coffee';
 import { defaultTheme } from '../../../../styles/themes/default';
 
 import {
@@ -18,6 +17,7 @@ import {
 } from './CoffeeCard.style';
 import { ShoppingCartContext } from '../../../../context/shoppingCart';
 import { formatPrice } from '../../../../utils/formatPrice';
+import { Coffee } from '../../../../data/coffee';
 
 interface CoffeeCardProps {
   coffee: Coffee;
