@@ -34,6 +34,40 @@ export function shoppingCartReducer(state: shoppingCartState, action: any) {
         draft.shoppingCart.splice(indexCoffee, 1);
       });
     }
+
+    case ActionTypes.ADD_AMOUNT_COFFEE_SHOPPING_CART: {
+      const indexCoffee = state.shoppingCart.findIndex((coffee) => {
+        return coffee.id === action.payload.id;
+      });
+
+      if (indexCoffee < 0) {
+        return state;
+      }
+
+      return produce(state, (draft) => {
+        const coffee = draft.shoppingCart[indexCoffee];
+        draft.shoppingCart[indexCoffee].amount = coffee.amount + 1;
+        draft.shoppingCart[indexCoffee].totalPrice =
+          coffee.totalPrice + coffee.price;
+      });
+    }
+
+    case ActionTypes.DECREASE_AMOUNT_COFFEE_SHOPPING_CART: {
+      const indexCoffee = state.shoppingCart.findIndex((coffee) => {
+        return coffee.id === action.payload.id;
+      });
+
+      if (indexCoffee < 0) {
+        return state;
+      }
+
+      return produce(state, (draft) => {
+        const coffee = draft.shoppingCart[indexCoffee];
+        draft.shoppingCart[indexCoffee].amount = coffee.amount - 1;
+        draft.shoppingCart[indexCoffee].totalPrice =
+          coffee.totalPrice - coffee.price;
+      });
+    }
     default:
       return state;
   }

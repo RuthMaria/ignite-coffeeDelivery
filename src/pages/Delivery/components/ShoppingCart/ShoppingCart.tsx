@@ -1,7 +1,14 @@
 import { Trash } from 'phosphor-react';
 import React, { useContext } from 'react';
 import { Counter } from '../../../../components';
+import { formatPrice } from '../../../../utils/formatPrice';
 import { defaultTheme } from '../../../../styles/themes/default';
+import { Coffee } from '../../../../reducers/shoppingCart/reducer';
+import { ShoppingCartContext } from '../../../../context/shoppingCart';
+import {
+  addAmountCoffeeShoppingCartAction,
+  decreaseAmountCoffeeShoppingCartAction,
+} from '../../../../reducers/shoppingCart/actions';
 
 import {
   Amount,
@@ -16,15 +23,12 @@ import {
   Span,
   Values,
 } from './ShoppingCart.style';
-import { ShoppingCartContext } from '../../../../context/shoppingCart';
-import { formatPrice } from '../../../../utils/formatPrice';
-import { Coffee } from '../../../../reducers/shoppingCart/reducer';
 
 export const ShoppingCart: React.FC = () => {
-  const { shoppingCart, removeCoffeeShoppingCart } =
+  const { shoppingCart, removeCoffeeShoppingCart, dispatch } =
     useContext(ShoppingCartContext);
 
-  const handleRemoveCoffee = (coffee: Coffee) => {
+  const handleRemoveCoffeeShoppingCart = (coffee: Coffee) => {
     removeCoffeeShoppingCart(coffee.id);
   };
 
@@ -43,11 +47,21 @@ export const ShoppingCart: React.FC = () => {
                     <Quantity>
                       <Counter
                         amount={coffee.amount}
-                        addAmount={() => {}}
-                        decreaseAmount={() => {}}
+                        addAmount={() => {
+                          dispatch(
+                            addAmountCoffeeShoppingCartAction(coffee.id)
+                          );
+                        }}
+                        decreaseAmount={() => {
+                          dispatch(
+                            decreaseAmountCoffeeShoppingCartAction(coffee.id)
+                          );
+                        }}
                       />
 
-                      <button onClick={() => handleRemoveCoffee(coffee)}>
+                      <button
+                        onClick={() => handleRemoveCoffeeShoppingCart(coffee)}
+                      >
                         <Trash size={16} color={defaultTheme['purple']} />
                         <span>REMOVER</span>
                       </button>

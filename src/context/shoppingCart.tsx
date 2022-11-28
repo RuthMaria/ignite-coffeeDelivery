@@ -8,10 +8,10 @@ import {
 interface ShoppingCartContextTypes {
   shoppingCart: Coffee[];
   isEmptyShoppingCart: boolean;
+  dispatch: React.Dispatch<any>;
   numberItemsShoppingCart: number;
   removeCoffeeShoppingCart: (id: string) => void;
   addCoffeeShoppingCart: (coffee: Coffee) => void;
-  //addAmount: (id: string, amount: number) => any;
 }
 
 export const ShoppingCartContext = createContext(
@@ -64,27 +64,15 @@ export const ShoppingCartContextProvider: React.FC<
     dispatch(removeCoffeeShoppingCartAction(id));
   };
 
-  // const addAmount = (id: string, amount: number) => {
-  //   const newShoppingCart = shoppingCart.filter((coffee) => {
-  //     if (coffee.id === id) {
-  //       coffee.amount = amount;
-  //     }
-  //   });
-
-  //   // setShoppingCart(newShoppingCart);
-  // };
-
-  // const decreaseAmount = () => {};
-
   return (
     <ShoppingCartContext.Provider
       value={{
-        //addAmount,
         addCoffeeShoppingCart,
         shoppingCart,
         removeCoffeeShoppingCart,
         isEmptyShoppingCart,
         numberItemsShoppingCart,
+        dispatch,
       }}
     >
       {children}
