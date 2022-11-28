@@ -27,7 +27,7 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
   const [amount, setAmount] = useState(1);
   const { addCoffee } = useContext(ShoppingCartContext);
 
-  const addAmount = (id: string, amount: number) => {
+  const addAmount = () => {
     setAmount(amount + 1);
   };
 
@@ -75,12 +75,10 @@ export const CoffeeCard: React.FC<CoffeeCardProps> = ({ coffee }) => {
 
         <Quantity>
           <Counter
-            id={coffee.id}
             decreaseAmount={decreaseAmount}
             addAmount={addAmount}
             amount={amount}
             hasPadding
-            flag="home"
           />
 
           <Button onClick={handleAddCoffee}>
