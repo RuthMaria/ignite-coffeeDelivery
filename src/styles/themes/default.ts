@@ -18,4 +18,6 @@ export const defaultTheme = {
   'base-card': '#f3f2f2',
   background: '#fafafa',
   white: '#ffffff',
+
+  red: '#e25858',
 };

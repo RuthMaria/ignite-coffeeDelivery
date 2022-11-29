@@ -10,6 +10,7 @@ import {
   Content,
   Header,
   Div,
+  Error,
 } from './AddressForm.style';
 
 export const AddressForm: React.FC = () => {
@@ -25,18 +26,33 @@ export const AddressForm: React.FC = () => {
 
       <Address>
         <Input type="text" width={15} placeholder="CEP" />
+        <Error>Informe o CEP</Error>
         <Input type="text" placeholder="Rua" />
-
+        <Error>Informe o Rua</Error>
         <Complement>
-          <Input type="text" placeholder="Número" />
-          <Input type="text" placeholder="Complemento" />
-          <Optional>Opcional</Optional>
+          <div>
+            <Input type="text" placeholder="Número" />
+            <Error>Informe o número</Error>
+          </div>
+          <div>
+            <Input type="text" placeholder="Complemento" />
+            <Optional>Opcional</Optional>
+          </div>
         </Complement>
 
         <Div>
-          <Input type="text" placeholder="Bairro" />
-          <Input type="text" placeholder="Cidade" />
-          <Input type="text" placeholder="UF" />
+          <div>
+            <Input type="text" placeholder="Bairro" />
+            <Error>Informe o bairro</Error>
+          </div>
+          <div>
+            <Input type="text" placeholder="Cidade" />
+            <Error>Informe o cidade</Error>
+          </div>
+          <div>
+            <Input type="text" placeholder="UF" />
+            <Error>Informe o UF</Error>
+          </div>
         </Div>
       </Address>
     </Content>

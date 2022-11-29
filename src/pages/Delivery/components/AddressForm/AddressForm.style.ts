@@ -36,6 +36,11 @@ export const Div = styled.div`
   display: grid;
   grid-template-columns: 36% 1fr 10%;
   gap: 12px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Input = styled.input<{ width?: number }>`
@@ -56,11 +61,23 @@ export const Input = styled.input<{ width?: number }>`
   }
 `;
 
+export const Error = styled.p`
+  color: ${(props) => props.theme['red']};
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  font-size: 13px;
+`;
+
 export const Complement = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 36% 1fr;
   gap: 12px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Optional = styled.p`
@@ -69,5 +86,5 @@ export const Optional = styled.p`
   color: ${(props) => props.theme['base-label']};
   position: absolute;
   right: 1rem;
-  bottom: 2rem;
+  bottom: 3rem;
 `;
