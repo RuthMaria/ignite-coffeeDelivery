@@ -25,11 +25,16 @@ import {
 } from './ShoppingCart.style';
 
 export const ShoppingCart: React.FC = () => {
-  const { shoppingCart, removeCoffeeShoppingCart, dispatch } =
+  const { shoppingCart, removeCoffeeShoppingCart, dispatch, totalItems } =
     useContext(ShoppingCartContext);
 
   const handleRemoveCoffeeShoppingCart = (coffee: Coffee) => {
     removeCoffeeShoppingCart(coffee.id);
+  };
+
+  const totalPrice = () => {
+    const TAXA = 3.5;
+    return formatPrice(totalItems() + TAXA);
   };
 
   return (
@@ -82,7 +87,7 @@ export const ShoppingCart: React.FC = () => {
 
       <Values>
         <span>Total de itens</span>
-        <span>R$ 299,70</span>
+        <span>R$ {formatPrice(totalItems())}</span>
       </Values>
 
       <Values>
@@ -92,7 +97,7 @@ export const ShoppingCart: React.FC = () => {
 
       <Amount>
         <span>Total</span>
-        <span>R$ 33,20</span>
+        <span>R$ {totalPrice()}</span>
       </Amount>
 
       <Button>CONFIRMAR PEDIDO</Button>

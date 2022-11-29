@@ -12,6 +12,7 @@ interface ShoppingCartContextTypes {
   numberItemsShoppingCart: number;
   removeCoffeeShoppingCart: (id: string) => void;
   addCoffeeShoppingCart: (coffee: Coffee) => void;
+  totalItems: () => any;
 }
 
 export const ShoppingCartContext = createContext(
@@ -53,12 +54,20 @@ export const ShoppingCartContextProvider: React.FC<
 
   const { shoppingCart } = shoppingCartState;
 
+  const isEmptyShoppingCart = shoppingCart?.length === 0;
+  const numberItemsShoppingCart = shoppingCart?.length;
+
+  const totalItems = () => {
+    const count = shoppingCart.reduce((sum, coffee) => {
+      return coffee.totalPrice + sum;
+    }, 0);
+
+    return count;
+  };
+
   function addCoffeeShoppingCart(coffee: Coffee) {
     dispatch(addCoffeeShoppingCartAction(coffee));
   }
-
-  const isEmptyShoppingCart = shoppingCart?.length === 0;
-  const numberItemsShoppingCart = shoppingCart?.length;
 
   const removeCoffeeShoppingCart = (id: string) => {
     dispatch(removeCoffeeShoppingCartAction(id));
@@ -67,12 +76,13 @@ export const ShoppingCartContextProvider: React.FC<
   return (
     <ShoppingCartContext.Provider
       value={{
-        addCoffeeShoppingCart,
-        shoppingCart,
-        removeCoffeeShoppingCart,
-        isEmptyShoppingCart,
-        numberItemsShoppingCart,
         dispatch,
+        totalItems,
+        shoppingCart,
+        isEmptyShoppingCart,
+        addCoffeeShoppingCart,
+        numberItemsShoppingCart,
+        removeCoffeeShoppingCart,
       }}
     >
       {children}
