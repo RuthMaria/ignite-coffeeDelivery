@@ -1,10 +1,20 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react';
 import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import { defaultTheme } from '../../../../styles/themes/default';
+import { ErrorsType } from '../AddressForm/AddressForm';
 
-import { Container, Header, Payment } from './FormPayment.style';
+import { Container, Header, Payment, Error } from './FormPayment.style';
 
 export const FormPayment: React.FC = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const paymentMethodError = errors?.paymentMethod
+    ?.message as unknown as string;
+
   return (
     <Container>
       <Header>
@@ -18,19 +28,23 @@ export const FormPayment: React.FC = () => {
       </Header>
 
       <Payment>
-        <div>
+        <div {...register('paymentMethod')}>
           <CreditCard size={16} color={defaultTheme['purple']} />
-          <span>CARTÃO DE CRÉDITO</span>
+          <input type="radio" id="credit" name="paymentMethod" value="credit" />
+          <label htmlFor="credit">CARTÃO DE CRÉDITO</label>
         </div>
-        <div>
+        <div {...register('paymentMethod')}>
           <Bank size={16} color={defaultTheme['purple']} />
-          <span>CARTÃO DE DÉBITO</span>
+          <input type="radio" id="debit" name="paymentMethod" value="debit" />
+          <label htmlFor="debit">CARTÃO DE DÉBITO</label>
         </div>
-        <div>
+        <div {...register('paymentMethod')}>
           <Money size={16} color={defaultTheme['purple']} />
-          <span> DINHEIRO</span>
+          <input type="radio" id="money" name="paymentMethod" value="money" />
+          <label htmlFor="money">DINHEIRO</label>
         </div>
       </Payment>
+      {paymentMethodError && <Error>{paymentMethodError}</Error>}
     </Container>
   );
 };

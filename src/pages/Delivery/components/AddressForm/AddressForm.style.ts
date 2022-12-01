@@ -43,13 +43,17 @@ export const Div = styled.div`
   }
 `;
 
-export const Input = styled.input<{ width?: number }>`
+export const Input = styled.input<{ width?: number; hasError?: boolean }>`
   background-color: ${(props) => props.theme['base-button']};
   color: ${(props) => props.theme['base-text']};
   border-radius: 4px;
   padding: 12px;
   margin-bottom: 16px;
   width: ${(props) => props.width}rem;
+  border: ${(props) =>
+    props.hasError &&
+    `1px solid
+    ${props.theme['red']}`};
 
   ::placeholder {
     color: ${(props) => props.theme['base-label']};
@@ -80,11 +84,11 @@ export const Complement = styled.div`
   }
 `;
 
-export const Optional = styled.p`
+export const Optional = styled.p<{ hasError: boolean }>`
   font-size: 0.75rem;
   font-style: italic;
   color: ${(props) => props.theme['base-label']};
   position: absolute;
   right: 1rem;
-  bottom: 3rem;
+  bottom: ${(props) => (props.hasError ? '3.1' : '2')}rem;
 `;

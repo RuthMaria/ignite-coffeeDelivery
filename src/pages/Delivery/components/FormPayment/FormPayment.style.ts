@@ -5,6 +5,9 @@ export const Container = styled.div`
   border-radius: 6px;
   padding: 40px;
   margin-bottom: 12px;
+
+  input:checked {
+  }
 `;
 
 export const Header = styled.header`
@@ -27,7 +30,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Payment = styled.div<{ selected?: boolean }>`
+export const Payment = styled.section<{ selected?: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
@@ -39,7 +42,8 @@ export const Payment = styled.div<{ selected?: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-start;
+    gap: 5px;
     font-size: 0.75rem;
     color: ${(props) => props.theme['base-text']};
     background-color: ${(props) => props.theme['base-button']};
@@ -49,9 +53,17 @@ export const Payment = styled.div<{ selected?: boolean }>`
     :hover {
       background-color: ${(props) => props.theme['base-hover']};
     }
-  }
 
-  div:nth-child(3) {
-    justify-content: flex-start;
+    /* input {
+      visibility: hidden;
+      appearance: none;
+    } */
   }
+`;
+
+export const Error = styled.p`
+  color: ${(props) => props.theme['red']};
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  font-size: 13px;
 `;

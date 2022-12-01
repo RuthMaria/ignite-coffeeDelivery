@@ -100,7 +100,7 @@ export const ShoppingCart: React.FC = () => {
         <span>R$ {totalPrice()}</span>
       </Amount>
 
-      <Button>CONFIRMAR PEDIDO</Button>
+      <Button type="submit">CONFIRMAR PEDIDO</Button>
     </Container>
   );
 };
