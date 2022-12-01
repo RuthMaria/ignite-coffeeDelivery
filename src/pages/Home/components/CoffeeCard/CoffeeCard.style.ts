@@ -90,7 +90,9 @@ export const Button = styled.button`
   padding: 8px;
   border-radius: 6px;
 
+  transition: background-color 1s;
+
   &:hover {
-    background: ${(props) => props.theme['purple']};
+    background-color: ${(props) => props.theme['purple']};
   }
 `;

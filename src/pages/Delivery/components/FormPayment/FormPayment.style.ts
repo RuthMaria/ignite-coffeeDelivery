@@ -35,7 +35,16 @@ export const Payment = styled.section<{ selected?: boolean }>`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 
-  div {
+  input {
+    display: none;
+    appearance: none;
+  }
+
+  input:checked + label {
+    border: 1px solid ${(props) => props.theme['purple']};
+  }
+
+  label {
     cursor: pointer;
     border-radius: 6px;
     padding: 16px;
@@ -47,17 +56,10 @@ export const Payment = styled.section<{ selected?: boolean }>`
     font-size: 0.75rem;
     color: ${(props) => props.theme['base-text']};
     background-color: ${(props) => props.theme['base-button']};
-    border: ${(props) =>
-      props.selected && `1px solid ${props.theme['purple']}`};
 
     :hover {
       background-color: ${(props) => props.theme['base-hover']};
     }
-
-    /* input {
-      visibility: hidden;
-      appearance: none;
-    } */
   }
 `;
 

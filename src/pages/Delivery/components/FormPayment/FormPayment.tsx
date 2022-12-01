@@ -29,19 +29,26 @@ export const FormPayment: React.FC = () => {
 
       <Payment>
         <div {...register('paymentMethod')}>
-          <CreditCard size={16} color={defaultTheme['purple']} />
           <input type="radio" id="credit" name="paymentMethod" value="credit" />
-          <label htmlFor="credit">CARTÃO DE CRÉDITO</label>
+          <label htmlFor="credit">
+            <CreditCard size={16} color={defaultTheme['purple']} />
+            CARTÃO DE CRÉDITO
+          </label>
         </div>
         <div {...register('paymentMethod')}>
-          <Bank size={16} color={defaultTheme['purple']} />
           <input type="radio" id="debit" name="paymentMethod" value="debit" />
-          <label htmlFor="debit">CARTÃO DE DÉBITO</label>
+
+          <label htmlFor="debit">
+            <Bank size={16} color={defaultTheme['purple']} />
+            CARTÃO DE DÉBITO
+          </label>
         </div>
         <div {...register('paymentMethod')}>
-          <Money size={16} color={defaultTheme['purple']} />
           <input type="radio" id="money" name="paymentMethod" value="money" />
-          <label htmlFor="money">DINHEIRO</label>
+          <label htmlFor="money">
+            <Money size={16} color={defaultTheme['purple']} />
+            DINHEIRO
+          </label>
         </div>
       </Payment>
       {paymentMethodError && <Error>{paymentMethodError}</Error>}
