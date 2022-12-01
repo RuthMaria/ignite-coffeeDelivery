@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -7,6 +7,7 @@ import { FormPayment } from './components/FormPayment/FormPayment';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import { Container, Title } from './Delivery.style';
 import { useNavigate } from 'react-router-dom';
+import { ShoppingCartContext } from '../../context/shoppingCart';
 
 enum PaymentMethods {
   credit = 'credit',
@@ -32,20 +33,23 @@ const addressFormValidationSchema = zod.object({
 export type AddressFormData = zod.infer<typeof addressFormValidationSchema>;
 
 export const Delivery: React.FC = () => {
+  const { removeAllCoffeeShoppingCart } = useContext(ShoppingCartContext);
+
   const addressForm = useForm<AddressFormData>({
     resolver: zodResolver(addressFormValidationSchema),
   });
 
-  const { handleSubmit, formState } = addressForm;
+  const { handleSubmit } = addressForm;
   const navigate = useNavigate();
 
   const handleFinishDelivery = (data: AddressFormData) => {
     navigate('/deliveryConfirmation', {
       state: data,
     });
+
+    removeAllCoffeeShoppingCart();
   };
 
-  console.log(formState.errors);
   return (
     <Container onSubmit={handleSubmit(handleFinishDelivery)}>
       <FormProvider {...addressForm}>

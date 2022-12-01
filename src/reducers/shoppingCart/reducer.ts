@@ -35,6 +35,12 @@ export function shoppingCartReducer(state: shoppingCartState, action: any) {
       });
     }
 
+    case ActionTypes.REMOVE_ALL_COFFEE_SHOPPING_CART: {
+      return produce(state, (draft) => {
+        draft.shoppingCart = [];
+      });
+    }
+
     case ActionTypes.ADD_AMOUNT_COFFEE_SHOPPING_CART: {
       const indexCoffee = state.shoppingCart.findIndex((coffee) => {
         return coffee.id === action.payload.id;

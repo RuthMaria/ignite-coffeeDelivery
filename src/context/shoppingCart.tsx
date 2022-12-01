@@ -2,6 +2,7 @@ import { createContext, ReactNode, useEffect, useReducer } from 'react';
 import { Coffee, shoppingCartReducer } from '../reducers/shoppingCart/reducer';
 import {
   addCoffeeShoppingCartAction,
+  removeAllCoffeeShoppingCartAction,
   removeCoffeeShoppingCartAction,
 } from '../reducers/shoppingCart/actions';
 
@@ -11,6 +12,7 @@ interface ShoppingCartContextTypes {
   dispatch: React.Dispatch<any>;
   numberItemsShoppingCart: number;
   removeCoffeeShoppingCart: (id: string) => void;
+  removeAllCoffeeShoppingCart: () => void;
   addCoffeeShoppingCart: (coffee: Coffee) => void;
   totalItems: () => any;
 }
@@ -48,6 +50,7 @@ export const ShoppingCartContextProvider: React.FC<
 
   useEffect(() => {
     const stateJSON = JSON.stringify(shoppingCartState);
+    console.log(shoppingCart);
 
     localStorage.setItem('@ignite-shoppingCart:1.0.0', stateJSON);
   }, [shoppingCartState]);
@@ -73,6 +76,10 @@ export const ShoppingCartContextProvider: React.FC<
     dispatch(removeCoffeeShoppingCartAction(id));
   };
 
+  const removeAllCoffeeShoppingCart = () => {
+    dispatch(removeAllCoffeeShoppingCartAction());
+  };
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -83,6 +90,7 @@ export const ShoppingCartContextProvider: React.FC<
         addCoffeeShoppingCart,
         numberItemsShoppingCart,
         removeCoffeeShoppingCart,
+        removeAllCoffeeShoppingCart,
       }}
     >
       {children}

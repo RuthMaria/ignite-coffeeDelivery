@@ -5,6 +5,7 @@ export enum ActionTypes {
   ADD_AMOUNT_COFFEE_SHOPPING_CART = 'ADD_AMOUNT_COFFEE_SHOPPING_CART',
   DECREASE_AMOUNT_COFFEE_SHOPPING_CART = 'DECREASE_AMOUNT_COFFEE_SHOPPING_CART',
   REMOVE_COFFEE_SHOPPING_CART = 'REMOVE_COFFEE_SHOPPING_CART',
+  REMOVE_ALL_COFFEE_SHOPPING_CART = 'REMOVE_ALL_COFFEE_SHOPPING_CART',
 }
 
 export function addCoffeeShoppingCartAction(coffee: Coffee) {
@@ -22,6 +23,12 @@ export function removeCoffeeShoppingCartAction(id: string) {
     payload: {
       id,
     },
+  };
+}
+
+export function removeAllCoffeeShoppingCartAction() {
+  return {
+    type: ActionTypes.REMOVE_ALL_COFFEE_SHOPPING_CART,
   };
 }
 
