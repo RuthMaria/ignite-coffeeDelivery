@@ -6,6 +6,7 @@ import { AddressForm } from './components/AddressForm/AddressForm';
 import { FormPayment } from './components/FormPayment/FormPayment';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import { Container, Title } from './Delivery.style';
+import { useNavigate } from 'react-router-dom';
 
 enum PaymentMethods {
   credit = 'credit',
@@ -28,7 +29,7 @@ const addressFormValidationSchema = zod.object({
   }),
 });
 
-type AddressFormData = zod.infer<typeof addressFormValidationSchema>;
+export type AddressFormData = zod.infer<typeof addressFormValidationSchema>;
 
 export const Delivery: React.FC = () => {
   const addressForm = useForm<AddressFormData>({
@@ -36,11 +37,12 @@ export const Delivery: React.FC = () => {
   });
 
   const { handleSubmit, formState } = addressForm;
+  const navigate = useNavigate();
 
   const handleFinishDelivery = (data: AddressFormData) => {
-    console.log('entrou');
-    console.log(data);
-    console.log('dentro', formState.errors);
+    navigate('/deliveryConfirmation', {
+      state: data,
+    });
   };
 
   console.log(formState.errors);

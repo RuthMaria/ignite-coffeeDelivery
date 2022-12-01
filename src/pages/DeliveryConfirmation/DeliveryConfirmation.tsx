@@ -11,8 +11,22 @@ import {
   Subtitle,
   Title,
 } from './DeliveryConfirmation.style';
+import { useLocation } from 'react-router-dom';
+import { AddressFormData } from '../Delivery/Delivery';
+
+enum PaymentMethods {
+  credit = 'Cartão de crédito',
+  debit = 'Cartão de débito',
+  money = 'Dinheiro',
+}
+
+interface LocationType {
+  state: AddressFormData;
+}
 
 export const DeliveryConfirmation: React.FC = () => {
+  const { state } = useLocation() as unknown as LocationType;
+
   return (
     <Container>
       <aside>
@@ -27,8 +41,13 @@ export const DeliveryConfirmation: React.FC = () => {
               <MapPin size={16} weight="fill" color={defaultTheme['white']} />
             </IconCircle>
             <div>
-              Entrega em <span>Rua João Daniel Martinelli, 102</span>
-              <p>Farrapos - Porto Alegre, RS</p>
+              Entrega em{' '}
+              <span>
+                {state.street}, {state.number}
+              </span>
+              <p>
+                {state.district} - {state.city}, {state.uf}
+              </p>
             </div>
           </Prediction>
 
@@ -52,7 +71,7 @@ export const DeliveryConfirmation: React.FC = () => {
             </IconCircle>
             <div>
               <p>Pagamento na entrega</p>
-              <span>Cartão de Crédito</span>
+              <span>{PaymentMethods[state.paymentMethod]}</span>
             </div>
           </Prediction>
         </Card>
