@@ -25,8 +25,13 @@ import {
 } from './ShoppingCart.style';
 
 export const ShoppingCart: React.FC = () => {
-  const { shoppingCart, removeCoffeeShoppingCart, dispatch, totalItems } =
-    useContext(ShoppingCartContext);
+  const {
+    shoppingCart,
+    removeCoffeeShoppingCart,
+    dispatch,
+    totalItems,
+    isEmptyShoppingCart,
+  } = useContext(ShoppingCartContext);
 
   const handleRemoveCoffeeShoppingCart = (coffee: Coffee) => {
     removeCoffeeShoppingCart(coffee.id);
@@ -100,7 +105,9 @@ export const ShoppingCart: React.FC = () => {
         <span>R$ {totalPrice()}</span>
       </Amount>
 
-      <Button type="submit">CONFIRMAR PEDIDO</Button>
+      <Button type="submit" disabled={isEmptyShoppingCart}>
+        CONFIRMAR PEDIDO
+      </Button>
     </Container>
   );
 };
