@@ -64,12 +64,14 @@ export const Input = styled.input<{ width?: number; hasError?: boolean }>`
     outline: none;
   }
 
-  //para remover os botões de incrementar e decrementar do number
+  //para remover os botões de incrementar e decrementar do input=[type=number]
+  -moz-appearance: textfield;
+  appearance: textfield;
+
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    -moz-appearance: textfield;
   }
 `;
 

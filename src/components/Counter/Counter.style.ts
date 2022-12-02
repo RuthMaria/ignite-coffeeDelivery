@@ -18,6 +18,7 @@ export const Container = styled.div<ContainerProps>`
 
     &:disabled {
       opacity: 0.4;
+      cursor: not-allowed;
     }
 
     &:not(:disabled):hover {
@@ -27,13 +28,21 @@ export const Container = styled.div<ContainerProps>`
 
   input {
     text-align: center;
-    width: 30px;
+    width: ${(props) => (props.hasPadding ? '15px' : '20px')};
     background: transparent;
-    margin-right: -1rem;
     color: ${(props) => props.theme['base-title']};
 
     &:focus {
       outline: none;
+    }
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 `;

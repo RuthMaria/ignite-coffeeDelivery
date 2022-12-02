@@ -22,11 +22,11 @@ export const Counter: React.FC<CounterProps> = ({
 }) => {
   return (
     <Container hasPadding={hasPadding}>
-      <button disabled={amount === 1} onClick={decreaseAmount}>
+      <button type="button" disabled={amount === 1} onClick={decreaseAmount}>
         <Minus size={14} weight="fill" />
       </button>
       <input type="number" readOnly value={amount} />
-      <button onClick={addAmount}>
+      <button type="button" onClick={addAmount}>
         <Plus size={14} weight="fill" />
       </button>
     </Container>
