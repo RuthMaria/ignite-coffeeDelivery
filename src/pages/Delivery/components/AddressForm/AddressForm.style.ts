@@ -63,6 +63,14 @@ export const Input = styled.input<{ width?: number; hasError?: boolean }>`
     border: 1.5px solid ${(props) => props.theme['yellow-dark']};
     outline: none;
   }
+
+  //para remover os botões de incrementar e decrementar do number
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+  }
 `;
 
 export const Error = styled.p`

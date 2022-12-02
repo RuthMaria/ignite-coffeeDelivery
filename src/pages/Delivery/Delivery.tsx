@@ -19,7 +19,7 @@ const addressFormValidationSchema = zod.object({
   cep: zod.string().min(1, 'Informe o CEP'),
   street: zod.string().min(1, 'Informe a rua'),
   number: zod.string().min(1, 'Informe o número'),
-  complement: zod.string(),
+  complement: zod.string().optional(),
   district: zod.string().min(1, 'Informe o bairro'),
   city: zod.string().min(1, 'Informe a cidade'),
   uf: zod.string().min(1, 'Informe o UF'),

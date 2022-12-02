@@ -40,7 +40,7 @@ export const AddressForm: React.FC = () => {
       <Address>
         <Input
           hasError={!!errors.cep?.message}
-          type="text"
+          type="number"
           width={15}
           placeholder="CEP"
           id="cep"
@@ -59,7 +59,7 @@ export const AddressForm: React.FC = () => {
           <div>
             <Input
               hasError={!!errors.number?.message}
-              type="text"
+              type="number"
               placeholder="Número"
               id="number"
               {...register('number')}
