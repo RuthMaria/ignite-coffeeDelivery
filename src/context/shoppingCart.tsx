@@ -50,7 +50,6 @@ export const ShoppingCartContextProvider: React.FC<
 
   useEffect(() => {
     const stateJSON = JSON.stringify(shoppingCartState);
-    console.log(shoppingCart);
 
     localStorage.setItem('@ignite-shoppingCart:1.0.0', stateJSON);
   }, [shoppingCartState]);

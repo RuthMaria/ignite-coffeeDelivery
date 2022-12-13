@@ -102,3 +102,23 @@ export const Optional = styled.p<{ hasError: boolean }>`
   right: 1rem;
   bottom: ${(props) => (props.hasError ? '3.1' : '2')}rem;
 `;
+
+export const Button = styled.button`
+  background-color: ${(props) => props.theme['purple']};
+  padding: 12px;
+  height: 2.7rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  transition: opacity 1s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const CepSearch = styled.div`
+  display: flex;
+  gap: 12px;
+`;

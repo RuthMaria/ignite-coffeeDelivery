@@ -1,6 +1,7 @@
 import React from 'react';
-import { MapPinLine } from 'phosphor-react';
+import { MagnifyingGlass, MapPinLine } from 'phosphor-react';
 import { defaultTheme } from '../../../../styles/themes/default';
+import axios from 'axios';
 
 import {
   Address,
@@ -11,6 +12,8 @@ import {
   Header,
   Div,
   Error,
+  Button,
+  CepSearch,
 } from './AddressForm.style';
 import { useFormContext } from 'react-hook-form';
 
@@ -22,10 +25,39 @@ export interface ErrorsType {
   };
 }
 
-export const AddressForm: React.FC = () => {
-  const { register, formState } = useFormContext();
+interface CEPData {
+  logradouro: string;
+  complemento: string;
+  localidade: string;
+  uf: string;
+  bairro: string;
+  cep: string;
+}
 
+export const AddressForm: React.FC = () => {
+  const { register, formState, setValue, getValues, clearErrors } =
+    useFormContext();
   const { errors } = formState as ErrorsType;
+
+  const searchCep = () => {
+    axios<CEPData>({
+      method: 'get',
+      url: `https://viacep.com.br/ws/${getValues('cep')}/json/`,
+    }).then((response) => {
+      setValue('street', response.data.logradouro);
+      setValue('complement', response.data.complemento);
+      setValue('city', response.data.localidade);
+      setValue('uf', response.data.uf);
+      setValue('district', response.data.bairro);
+      setValue('cep', response.data.cep);
+      clearErrors('street');
+      clearErrors('complement');
+      clearErrors('city');
+      clearErrors('uf');
+      clearErrors('district');
+      clearErrors('cep');
+    });
+  };
 
   return (
     <Content>
@@ -38,15 +70,22 @@ export const AddressForm: React.FC = () => {
       </Header>
 
       <Address>
-        <Input
-          hasError={!!errors.cep?.message}
-          type="number"
-          width={15}
-          placeholder="CEP"
-          id="cep"
-          {...register('cep')}
-        />
-        {errors && <Error>{errors.cep?.message}</Error>}
+        <CepSearch>
+          <div>
+            <Input
+              hasError={!!errors.cep?.message}
+              type="text"
+              width={15}
+              placeholder="CEP"
+              id="cep"
+              {...register('cep')}
+            />
+            {errors && <Error>{errors.cep?.message}</Error>}
+          </div>
+          <Button type="button" onClick={searchCep}>
+            <MagnifyingGlass size={24} color={defaultTheme['white']} />
+          </Button>
+        </CepSearch>
         <Input
           hasError={!!errors.street?.message}
           type="text"
