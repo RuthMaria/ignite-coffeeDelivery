@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Logo Repository" src="./src/assets/logo.svg" width="300px" />
+    <img alt="Logo Repository" src="./public/assets/logo.svg" width="300px" />
 </h1>
 
 <p align="center">
