@@ -35,7 +35,7 @@ An application that manages a shopping cart of a fictitious coffee shop, which c
 
 ## :tv: Preview
 
-![video](./src/assets/video.gif)
+![video](./public/assets/video.gif)
 
 Access this layout in [Figma](<https://www.figma.com/file/BfaIbr16yF5KsptfKCDJNx/Coffee-Delivery-(Copy)?node-id=2%3A1550>).
 
@@ -49,6 +49,7 @@ Access this layout in [Figma](<https://www.figma.com/file/BfaIbr16yF5KsptfKCDJNx
 - Immer
 - React.js
 - TypeScript
+- API viacep
 - Phosphor Icons
 - React hook form
 - Styled components
