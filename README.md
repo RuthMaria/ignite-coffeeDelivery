@@ -37,7 +37,7 @@ An application that manages a shopping cart of a fictitious coffee shop, which c
 
 ![video](./public/assets/video.gif)
 
-Access this layout in [Figma](<https://www.figma.com/file/BfaIbr16yF5KsptfKCDJNx/Coffee-Delivery-(Copy)?node-id=2%3A1550>).
+Access this layout in [Figma](<https://www.figma.com/file/LudOgLXj0M5EKRnirrtoCu/Coffee-Delivery-(Copy)?node-id=0%3A1&t=5VHu0MLKKe0emQK7-0>).
 
 <a id="technologies"></a><br>
 
